@@ -11,6 +11,7 @@ final class DataStore {
     var phoneNumbers: [String]
     var emails: [String]
     
+    
     init() {
         names = [
             "John",

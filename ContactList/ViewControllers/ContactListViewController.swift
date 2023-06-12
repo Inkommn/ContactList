@@ -9,7 +9,7 @@ import UIKit
 
 final class ContactListViewController: UITableViewController {
     
-    private var info = Person.getContacts()
+    private var info = Person.getRandomContacts()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +27,7 @@ extension ContactListViewController {
         let contacts = info[indexPath.row]
         var content = cell.defaultContentConfiguration()
         
-        content.text = contacts.names.randomElement()
-        content.secondaryText = contacts.surnames.randomElement()
+        content.text = contacts.fullName
         
         cell.contentConfiguration = content
         

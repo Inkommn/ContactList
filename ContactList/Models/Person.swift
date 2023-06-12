@@ -11,17 +11,33 @@ struct Person {
     var emails: [String]
     var phoneNumbers: [String]
     
+    var fullName: String {
+        "\(names.first ?? "") \(surnames.first ?? "") "
+    }
     
     
-    static func getContacts() -> [Person] {
+    
+    static func getRandomContacts() -> [Person] {
         let data = DataStore()
-        var contacs: [Person] = []
+        var contacts: [Person] = []
         
-        for _ in 0..<data.names.count {
-            let person = Person(names: data.names, surnames: data.surnames, emails: data.emails, phoneNumbers: data.phoneNumbers)
-            contacs.append(person)
+        let randomNames = data.names.shuffled()
+        let randomSurnames = data.surnames.shuffled()
+        let randomEmails = data.emails.shuffled()
+        let phoneNumbers = data.phoneNumbers.shuffled()
+
+        for element in 0..<data.names.count {
+            
+            let person = Person(
+                names: [randomNames[element]],
+                surnames: [randomSurnames[element]],
+                emails: [randomEmails[element]],
+                phoneNumbers: [phoneNumbers[element]]
+            )
+            
+            contacts.append(person)
         }
         
-        return contacs
+        return contacts
     }
 }
