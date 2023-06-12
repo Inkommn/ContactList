@@ -9,7 +9,7 @@ import UIKit
 
 final class ContactListViewController: UITableViewController {
     
-    private var info = Person.getRandomContacts()
+    private var personsInfo = Person.getRandomContacts()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +19,12 @@ final class ContactListViewController: UITableViewController {
 
 extension ContactListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        info.count
+        personsInfo.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactList", for: indexPath)
-        let contacts = info[indexPath.row]
+        let contacts = personsInfo[indexPath.row]
         var content = cell.defaultContentConfiguration()
         
         content.text = contacts.fullName

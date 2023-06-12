@@ -15,8 +15,6 @@ struct Person {
         "\(names.first ?? "") \(surnames.first ?? "") "
     }
     
-    
-    
     static func getRandomContacts() -> [Person] {
         let data = DataStore()
         var contacts: [Person] = []
@@ -25,7 +23,7 @@ struct Person {
         let randomSurnames = data.surnames.shuffled()
         let randomEmails = data.emails.shuffled()
         let phoneNumbers = data.phoneNumbers.shuffled()
-
+        
         for element in 0..<data.names.count {
             
             let person = Person(

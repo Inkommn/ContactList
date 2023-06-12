@@ -11,7 +11,6 @@ final class DataStore {
     var phoneNumbers: [String]
     var emails: [String]
     
-    
     init() {
         names = [
             "John",
@@ -19,7 +18,8 @@ final class DataStore {
             "Eddie",
             "Francisco",
             "Hank",
-            "Ragnar"
+            "Ragnar",
+            "Ellis"
         ]
         
         surnames = [
@@ -28,7 +28,8 @@ final class DataStore {
             "Willers",
             "d'Anconia",
             "Rearden",
-            "Danneskjöld"
+            "Danneskjöld",
+            "Wyatt"
         ]
         
         phoneNumbers = [
@@ -37,7 +38,8 @@ final class DataStore {
             "33333",
             "44444",
             "55555",
-            "66666"
+            "66666",
+            "77777"
         ]
         
         emails = [
@@ -46,7 +48,8 @@ final class DataStore {
             "black@email.com",
             "pink@email.com",
             "yellow@email.com",
-            "white@email.com"
+            "white@email.com",
+            "grey@email.com"
         ]
     }
 }
