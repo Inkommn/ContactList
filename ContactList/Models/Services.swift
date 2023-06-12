@@ -5,7 +5,7 @@
 //  Created by Shamkhan Mutuskhanov on 11.06.2023.
 //
 
-final class DataManager {
+final class DataStore {
     var names: [String]
     var surnames: [String]
     var phoneNumbers: [String]
@@ -49,3 +49,10 @@ final class DataManager {
         ]
     }
 }
+
+
+    
+    
+    
+    
+    
