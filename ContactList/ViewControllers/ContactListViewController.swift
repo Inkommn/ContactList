@@ -9,10 +9,17 @@ import UIKit
 
 final class ContactListViewController: UITableViewController {
     
-    private var personsInfo = Person.getRandomContacts()
+    private let personsInfo = Person.getRandomContacts()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let contactDetailsVC = segue.destination as? ContactDetailsViewController else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        contactDetailsVC.contact = personsInfo[indexPath.row]
         
     }
 }
@@ -33,4 +40,6 @@ extension ContactListViewController {
         
         return cell
     }
+    
+   
 }

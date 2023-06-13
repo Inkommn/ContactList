@@ -6,10 +6,10 @@
 //
 
 struct Person {
-    var names: [String]
-    var surnames: [String]
-    var emails: [String]
-    var phoneNumbers: [String]
+    let names: [String]
+    let surnames: [String]
+    let emails: [String]
+    let phoneNumbers: [String]
     
     var fullName: String {
         "\(names.first ?? "") \(surnames.first ?? "") "

@@ -6,10 +6,10 @@
 //
 
 final class DataStore {
-    var names: [String]
-    var surnames: [String]
-    var phoneNumbers: [String]
-    var emails: [String]
+    let names: [String]
+    let surnames: [String]
+    let phoneNumbers: [String]
+    let emails: [String]
     
     init() {
         names = [
@@ -33,13 +33,13 @@ final class DataStore {
         ]
         
         phoneNumbers = [
-            "11111",
-            "22222",
-            "33333",
-            "44444",
-            "55555",
-            "66666",
-            "77777"
+            "1111101",
+            "2222202",
+            "3333303",
+            "4444454",
+            "5555565",
+            "6666676",
+            "7777707"
         ]
         
         emails = [
