@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DA1289C2A374DCB000EADEC /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1289B2A374DCB000EADEC /* ContactDetailsViewController.swift */; };
+		1DBDDFF62A38832900A5E2B6 /* SecondContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBDDFF52A38832900A5E2B6 /* SecondContactListViewController.swift */; };
 		1DE3146C2A35E291000939A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE3146B2A35E291000939A7 /* AppDelegate.swift */; };
 		1DE3146E2A35E291000939A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE3146D2A35E291000939A7 /* SceneDelegate.swift */; };
 		1DE314702A35E291000939A7 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE3146F2A35E291000939A7 /* ContactListViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		1DA1289B2A374DCB000EADEC /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
+		1DBDDFF52A38832900A5E2B6 /* SecondContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondContactListViewController.swift; sourceTree = "<group>"; };
 		1DE314682A35E291000939A7 /* ContactList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE3146B2A35E291000939A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DE3146D2A35E291000939A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				1DE3146F2A35E291000939A7 /* ContactListViewController.swift */,
 				1DA1289B2A374DCB000EADEC /* ContactDetailsViewController.swift */,
+				1DBDDFF52A38832900A5E2B6 /* SecondContactListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				1DA1289C2A374DCB000EADEC /* ContactDetailsViewController.swift in Sources */,
 				1DE3146C2A35E291000939A7 /* AppDelegate.swift in Sources */,
 				1DE314802A35E473000939A7 /* Person.swift in Sources */,
+				1DBDDFF62A38832900A5E2B6 /* SecondContactListViewController.swift in Sources */,
 				1DE3146E2A35E291000939A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
