@@ -8,31 +8,30 @@
 import UIKit
 
 final class SecondContactListViewController: UITableViewController {
-    
 
+    var dataSource: [Person]!
     
+  
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-  
+        
+        
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        dataSource.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "secondContactList", for: indexPath)
-        let contacts = contactInfo[indexPath.row]
+        let contact = dataSource[indexPath.row]
         var content = cell.defaultContentConfiguration()
         
-        content.text = contacts.fullName
+        content.text = contact.fullName
 
-        
         cell.contentConfiguration = content
         return cell
     }
