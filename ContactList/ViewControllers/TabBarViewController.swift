@@ -8,14 +8,18 @@
 import UIKit
 
 final class TabBarViewController: UITabBarController {
-    private var randomContacts = Person.getRandomContacts()
+    // MARK: - Private properties
+    private let randomContacts = Person.getRandomContacts()
     
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Persons List"
         sendPersonsInfoToTableViews()
     }
     
-    func sendPersonsInfoToTableViews() {
+    // MARK: - Private methods
+    private func sendPersonsInfoToTableViews() {
         guard let viewControllers = self.viewControllers else { return }
         
         viewControllers.forEach { viewController in

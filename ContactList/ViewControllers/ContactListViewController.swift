@@ -11,14 +11,19 @@ import UIKit
 
 final class ContactListViewController: UITableViewController {
     
+    // MARK: - Public properties
     var dataSource: [Person]!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    
+    // MARK: - UIViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let contactDetailsVC = segue.destination as? ContactDetailsViewController else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        
+        contactDetailsVC.contact = dataSource[indexPath.row]
     }
 }
 
+// MARK: - Table View setup
 extension ContactListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         dataSource.count
@@ -34,13 +39,6 @@ extension ContactListViewController {
         cell.contentConfiguration = content
         
         return cell
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let contactDetailsVC = segue.destination as? ContactDetailsViewController else { return }
-        guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        
-        contactDetailsVC.contact = dataSource[indexPath.row]
     }
 }
 

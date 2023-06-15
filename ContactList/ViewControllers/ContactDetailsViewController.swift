@@ -8,10 +8,11 @@
 import UIKit
 
 final class ContactDetailsViewController: UIViewController {
-    
+    // MARK: - IBOutlets
     @IBOutlet var phoneLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     
+    // MARK: - Public properties
     var contact: Person!
     
     override func viewDidLoad() {
