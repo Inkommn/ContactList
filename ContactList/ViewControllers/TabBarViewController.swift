@@ -8,18 +8,22 @@
 import UIKit
 
 final class TabBarViewController: UITabBarController {
-    var randomContacts = Person.getRandomContacts()
+    private var randomContacts = Person.getRandomContacts()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sendPersonsInfoToTableViews()
     }
     
-    func prepare() {
-        let viewControllers = tabBarController?.viewControllers
-        if let contactListVC = viewControllers?[0] as? ContactListViewController {
-            contactListVC.dataSource = randomContacts
-        }  else if let secondContactListVC = viewControllers?[1] as? SecondContactListViewController {
-            secondContactListVC.dataSource = randomContacts
+    func sendPersonsInfoToTableViews() {
+        guard let viewControllers = self.viewControllers else { return }
+        
+        viewControllers.forEach { viewController in
+            if let contactListVC = viewController as? ContactListViewController {
+                contactListVC.dataSource = randomContacts
+            } else if let secondContactListVC = viewController as? SecondContactListViewController {
+                secondContactListVC.dataSource = randomContacts
+            }
         }
     }
 }

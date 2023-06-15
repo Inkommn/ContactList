@@ -13,13 +13,10 @@ final class ContactListViewController: UITableViewController {
     
     var dataSource: [Person]!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-    
 
+    }
 }
 
 extension ContactListViewController {
