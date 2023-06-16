@@ -7,16 +7,16 @@
 
 import UIKit
 
-final class SecondContactListViewController: UITableViewController {
+final class SectionContactListViewController: UITableViewController {
     // MARK: - Public properties
-    var dataSource: [Person]!
+    var personList: [Person]!
 }
 
-// MARK: - Table View setup
-extension SecondContactListViewController {
+// MARK: - UITableViewDataSource
+extension SectionContactListViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        dataSource.count
+        personList.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,16 +24,16 @@ extension SecondContactListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "secondContactList", for: indexPath)
-        let contact = dataSource[indexPath.section]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let contact = personList[indexPath.section]
         var content = cell.defaultContentConfiguration()
         
         switch indexPath.row {
         case 0:
-            content.text = contact.phoneNumbers.first
+            content.text = contact.phoneNumber
             content.image = UIImage(systemName: "phone")
         default:
-            content.text = contact.emails.first
+            content.text = contact.email
             content.image = UIImage(systemName: "envelope")
         }
         
@@ -42,10 +42,10 @@ extension SecondContactListViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section < dataSource.count {
-            return dataSource[section].fullName
-        } else {
-            return nil
-        }
+        personList[section].fullName
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

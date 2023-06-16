@@ -11,7 +11,7 @@ final class TabBarViewController: UITabBarController {
     // MARK: - Private properties
     private let randomContacts = Person.getRandomContacts()
     
-    // MARK: - UIViewController
+    // MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Persons List"
@@ -24,9 +24,9 @@ final class TabBarViewController: UITabBarController {
         
         viewControllers.forEach { viewController in
             if let contactListVC = viewController as? ContactListViewController {
-                contactListVC.dataSource = randomContacts
-            } else if let secondContactListVC = viewController as? SecondContactListViewController {
-                secondContactListVC.dataSource = randomContacts
+                contactListVC.personList = randomContacts
+            } else if let secondContactListVC = viewController as? SectionContactListViewController {
+                secondContactListVC.personList = randomContacts
             }
         }
     }

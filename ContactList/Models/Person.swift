@@ -6,31 +6,36 @@
 //
 
 struct Person {
-    let names: [String]
-    let surnames: [String]
-    let emails: [String]
-    let phoneNumbers: [String]
+    let name: String
+    let surname: String
+    let email: String
+    let phoneNumber: String
     
     var fullName: String {
-        "\(names.first ?? "") \(surnames.first ?? "") "
+        "\(name) \(surname)"
     }
     
     static func getRandomContacts() -> [Person] {
-        let data = DataStore()
         var contacts: [Person] = []
         
-        let randomNames = data.names.shuffled()
-        let randomSurnames = data.surnames.shuffled()
-        let randomEmails = data.emails.shuffled()
-        let phoneNumbers = data.phoneNumbers.shuffled()
+        let randomNames = DataStore.shared.names.shuffled()
+        let randomSurnames = DataStore.shared.surnames.shuffled()
+        let randomEmails = DataStore.shared.emails.shuffled()
+        let randomPhoneNumbers = DataStore.shared.phoneNumbers.shuffled()
         
-        for element in 0..<data.names.count {
-            
+        let interationCount = min(
+            randomNames.count,
+            randomSurnames.count,
+            randomEmails.count,
+            randomPhoneNumbers.count
+        )
+        
+        for index in 0..<interationCount {
             let person = Person(
-                names: [randomNames[element]],
-                surnames: [randomSurnames[element]],
-                emails: [randomEmails[element]],
-                phoneNumbers: [phoneNumbers[element]]
+                name: randomNames[index],
+                surname: randomSurnames[index],
+                email: randomEmails[index],
+                phoneNumber: randomPhoneNumbers[index]
             )
             
             contacts.append(person)
