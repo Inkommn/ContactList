@@ -52,7 +52,7 @@ extension SectionContactListViewController {
         )
         
         fullNameLabel.text = personList[section].fullName
-        fullNameLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        fullNameLabel.font = UIFont.boldSystemFont(ofSize: 18)
         fullNameLabel.textColor = .white
         
         let contentView = UIView()
